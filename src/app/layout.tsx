@@ -1,3 +1,7 @@
+'use client'
+
+import CustomThemeProvider from '@/context/themeContext'
+import { GlobalStyle } from '@/styles/GlobalStyles'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -14,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <CustomThemeProvider>
+        <GlobalStyle />
+        <body className={inter.className}>{children}</body>
+      </CustomThemeProvider>
     </html>
   )
 }
