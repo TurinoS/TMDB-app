@@ -1,25 +1,41 @@
-import { ReactNode, useState } from "react";
-import { ThemeProvider } from "styled-components";
+'use client';
 
-import { lightTheme, darkTheme } from "@/styles/theme";
+import { DefaultTheme, ThemeProvider } from "styled-components";
+import { createContext, useState, useCallback, useContext } from "react";
+import { dark } from "@/styles/themes/dark";
+import { light } from "@/styles/themes/light";
 
-export function useToggleTheme() {
-    const [theme, setTheme] = useState('dark');
-    
-    const toggleTheme = () => {
-        theme === 'light' ? setTheme('dark') : setTheme('light');
-        console.log(theme)
-    }
+interface ThemeContextData {
+    toggleTheme(): void
+    theme: DefaultTheme
+};
 
-    return { theme, toggleTheme };
-}
+interface MainProps {
+    children: React.ReactNode
+};
 
-export default function CustomThemeProvider({ children }: {children: ReactNode}) {
-    const { theme } = useToggleTheme();
+const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData);
+
+export const useTheme = () => useContext(ThemeContext);
+
+export const CustomThemeProvider = ({ children }: MainProps) => {
+    const [theme, setTheme] = useState<DefaultTheme>(dark);
+
+    const toggleTheme = useCallback(() => {
+        if(theme.title === 'light') {
+            setTheme(dark);
+        } else {
+            setTheme(light);
+        };
+    }, [theme])
 
     return(
-        <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
-            {children}
-        </ThemeProvider>
-    )
-}
+        <ThemeContext.Provider value={{theme, toggleTheme}}>
+            <ThemeProvider theme={theme}>
+                {children}
+            </ThemeProvider>
+        </ThemeContext.Provider>
+    );
+};
+
+export default ThemeProvider;

@@ -1,6 +1,5 @@
 'use client'
 
-import CustomThemeProvider from '@/context/themeContext'
 import { Inter } from 'next/font/google'
 import StyledComponentsRegistry from '../../registry'
 
@@ -18,11 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <CustomThemeProvider>
         <StyledComponentsRegistry>
           <body className={inter.className}>{children}</body>
         </StyledComponentsRegistry>
-      </CustomThemeProvider>
     </html>
   )
 }

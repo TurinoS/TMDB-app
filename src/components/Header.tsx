@@ -1,25 +1,25 @@
+import { useTheme } from "@/context/themeContext";
 import Link from "next/link";
 import styled from "styled-components";
-import { useToggleTheme } from "@/context/themeContext";
 
 const StyledHeader = styled.header`
-    background-color: ${props => props.theme.bgColor};
+    background-color: ${props => props.theme.colors.secondary};
     padding: .2em 5em;
 
     & a {
         font-size: 32px;
         text-decoration: none;
-        color: ${props => props.theme.fontColor};
+        color: ${props => props.theme.colors.text};
     }
 `
 
 export default function Header() {
-    const { toggleTheme } = useToggleTheme();
+    const { toggleTheme, theme } = useTheme();
 
     return(
         <StyledHeader>
             <Link href='/'>TMDB App</Link>
-            <button onClick={() => toggleTheme()}>mode</button>
+            <button onClick={toggleTheme}>{theme.title} mode</button>
         </StyledHeader>
     )
 }
