@@ -6,8 +6,8 @@ declare module 'styled-components' {
         colors: {
             primary: string
             secondary: string
-            button: string
-            text: string
+            textSecondary: string
+            textPrimary: string
             textButton: string
         }
     }

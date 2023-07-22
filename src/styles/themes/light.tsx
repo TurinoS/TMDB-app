@@ -5,8 +5,8 @@ export const light: DefaultTheme = {
         colors: {
             primary: '#fefae0',
             secondary: '#4895ef',
-            button: '#ffd60a',
-            text: '#0f0f0f',
+            textPrimary: '#0f0f0f',
+            textSecondary: '#ffd60a',
             textButton: '#161a1d',
         }
 }

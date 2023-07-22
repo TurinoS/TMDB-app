@@ -13,9 +13,9 @@ const StyledHeader = styled.header`
     box-shadow: 3px 2px 4px 1px #000;
 
     & a {
-        font-size: 32px;
+        font-size: 30px;
         text-decoration: none;
-        color: ${props => props.theme.colors.text};
+        color: ${props => props.theme.colors.textSecondary};
     }
 
     & button {

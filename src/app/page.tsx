@@ -1,6 +1,7 @@
 'use client'
 
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import { CustomThemeProvider } from '@/context/themeContext'
 import { GlobalStyle } from '@/styles/GlobalStyles'
 import { styled } from 'styled-components'
@@ -16,6 +17,7 @@ export default function Home() {
         <GlobalStyle />
         <Header />
         <h1>Hello World!</h1>
+        <Footer />
       </StyledHome>
     </CustomThemeProvider>
   )
