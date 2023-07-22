@@ -6,7 +6,7 @@ export const dark: DefaultTheme = {
             primary: '#14213d',
             secondary: '#fca311',
             button: '#003566',
-            text: '#fff',
+            text: '#fefefe',
             textButton: '#fff',
         }
 }
