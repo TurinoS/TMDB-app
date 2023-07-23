@@ -7,6 +7,7 @@ import { GlobalStyle } from '@/styles/GlobalStyles'
 import { styled } from 'styled-components'
 import Card from '@/components/Card'
 import Wrapper from '@/styles/Wrapper'
+import { AppContextProvider } from '@/context/AppContext'
 
 const StyledHome = styled.main`
   color: ${props => props.theme.fontColor};
@@ -19,8 +20,10 @@ export default function Home() {
         <GlobalStyle />
         <Header />
         <Wrapper>
-          <h1>Hello World!</h1>
-          <Card />
+          <AppContextProvider>
+            <h1>Hello World!</h1>
+            <Card />
+          </AppContextProvider>
         </Wrapper>
         <Footer />
       </StyledHome>
