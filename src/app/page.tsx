@@ -27,7 +27,7 @@ export default function Home() {
         <Header />
         <Wrapper>
           {movies.length > 0 ? movies.map((movie) => (
-            <Card key={movie.id} title={movie.title} img={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
+            <Card key={movie.id} title={movie.title} img={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} vote={movie.vote_average * 10} />
           )) : <h2>Loading Data...</h2>}
         </Wrapper>
         <Footer />
