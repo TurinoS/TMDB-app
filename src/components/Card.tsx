@@ -1,20 +1,22 @@
-
-import { AppContext } from "@/context/AppContext";
-import { useContext } from "react";
+import Image from "next/image";
 import styled from "styled-components";
 
 const StyledCard = styled.div`
-    width: 20vw;
+    width: 200px;
 `
 
-export default function Card() {
-    const { movies } = useContext(AppContext)
+interface CardProps {
+    title: string,
+    img: string,
+}
 
-    console.log(movies)
+export default function Card({ title, img }: CardProps) {
+    const imageUrl = 'https://image.tmdb.org/t/p/w500/'
 
     return(
         <StyledCard>
-            <h2>{movies[0].genres[0].name}</h2>
+            <Image src={`${imageUrl}${img}`} alt={title} width={200} height={290} priority />
+            <h2>{title}</h2>
         </StyledCard>
     )
 }
