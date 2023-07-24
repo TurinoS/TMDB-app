@@ -5,7 +5,7 @@ import { ReactNode, createContext, useEffect, useState } from "react";
 interface Movie {
   id: number;
   title: string;
-  releaseDate: string;
+  release_date: string;
   overview: string;
   poster_path: string;
   vote_average: number;

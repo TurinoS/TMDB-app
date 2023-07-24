@@ -20,6 +20,17 @@ export default function Home() {
   const { movies } = useContext(AppContext)
   console.log(movies)
 
+  const formatDate = (dateString: string) => {
+    const months = [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ];    
+    
+    const [year, month, day] = dateString.split('-');
+    const monthIndex = parseInt(month, 10) - 1;
+    return `${months[monthIndex]} ${day}, ${year}`;
+  };
+
   return (
     <CustomThemeProvider>
       <StyledHome>
@@ -27,7 +38,7 @@ export default function Home() {
         <Header />
         <Wrapper>
           {movies.length > 0 ? movies.map((movie) => (
-            <Card key={movie.id} title={movie.title} img={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} vote={movie.vote_average * 10} />
+            <Card key={movie.id} title={movie.title} img={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} vote={movie.vote_average * 10} release={formatDate(movie.release_date)} />
           )) : <h2>Loading Data...</h2>}
         </Wrapper>
         <Footer />
