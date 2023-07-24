@@ -6,10 +6,10 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         font-family: 'Roboto_Flex', sans-serif;
-        color: ${props => props.theme.colors.textPrimary};
     }
 
     body {
         background-color: ${props => props.theme.colors.primary};
+        color: ${props => props.theme.colors.textPrimary};
     }
 `

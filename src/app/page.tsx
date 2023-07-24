@@ -7,7 +7,6 @@ import { GlobalStyle } from '@/styles/GlobalStyles'
 import { styled } from 'styled-components'
 import Card from '@/components/Card'
 import Wrapper from '@/styles/Wrapper'
-import { AppContextProvider } from '@/context/AppContext'
 import { AppContext } from "@/context/AppContext";
 import { useContext } from "react";
 
