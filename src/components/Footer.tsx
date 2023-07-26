@@ -10,6 +10,10 @@ const StyledFooter = styled.footer`
   font-weight: 600;
   box-shadow: 3px -2px 4px 1px #000;
 
+  @media (max-width: 360px) {
+    font-size: 14px;
+  }
+
   & a {
     text-decoration: none;
     color: ${(props) => props.theme.colors.textSecondary};
