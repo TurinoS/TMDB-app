@@ -1,5 +1,3 @@
-'use client'
-
 import { Inter } from 'next/font/google'
 import StyledComponentsRegistry from '../../registry'
 import { AppContextProvider } from '@/context/AppContext'
