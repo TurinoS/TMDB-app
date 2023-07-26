@@ -23,13 +23,15 @@ interface Movie {
 }
 
 interface AppContextValue {
-  movies: Movie[];
+  topMovies: Movie[];
 }
 
-export const AppContext = createContext<AppContextValue>({ movies: [] });
+export const AppContext = createContext<AppContextValue>({
+  topMovies: [],
+});
 
 export const AppContextProvider = ({ children }: { children: ReactNode }) => {
-  const [movies, setMovies] = useState<Movie[]>([]);
+  const [topMovies, setTopMovies] = useState<Movie[]>([]);
 
   const key = "api_key=b088024ef25505a20beb366af0828e5e";
   const fetchUrl = "https://api.themoviedb.org/3/movie/";
@@ -38,12 +40,14 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
     async function fetchData() {
       const data = await fetch(`${fetchUrl}/top_rated?${key}`);
       const dataJason = await data.json();
-      setMovies(dataJason.results);
+      setTopMovies(dataJason.results);
     }
     fetchData();
   }, []);
 
   return (
-    <AppContext.Provider value={{ movies }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ topMovies }}>
+      {children}
+    </AppContext.Provider>
   );
 };

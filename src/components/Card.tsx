@@ -2,9 +2,16 @@ import Image from "next/image";
 import styled from "styled-components";
 import { BiSolidLike } from 'react-icons/bi'
 
-const StyledCard = styled.div`
+const StyledCard = styled.a`
     width: 254px;
     border: 2px solid ${props => props.theme.colors.secondary};
+    color: ${props => props.theme.colors.textPrimary};
+    text-decoration: none;
+
+    &:hover {
+        transform: scale(1.05);
+        transition: 400ms;
+    }
 
     & div {
         display: flex;
@@ -43,22 +50,44 @@ const LikeIcon = styled(BiSolidLike)`
 `
 
 interface CardProps {
+    id: number
     title: string,
     img: string,
     vote: number,
     release: string,
 }
 
-export default function Card({ title, img, vote, release }: CardProps) {
+const formatDate = (dateString: string) => {
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    const [year, month, day] = dateString.split("-");
+    const monthIndex = parseInt(month, 10) - 1;
+    return `${months[monthIndex]} ${day}, ${year}`;
+  };
+
+export default function Card({ title, img, vote, release, id }: CardProps) {
     const imageUrl = 'https://image.tmdb.org/t/p/w500/'
 
     return(
-        <StyledCard>
+        <StyledCard href={`/movie/${id}`}>
             <Image src={`${imageUrl}${img}`} alt={title} width={250} height={350} priority />
-            <div>
+            <div >
                 <span>{vote}%<LikeIcon /></span>
                 <h2>{title}</h2>
-                <p>{release}</p>
+                <p>{formatDate(release)}</p>
             </div>
         </StyledCard>
     )
