@@ -1,4 +1,4 @@
-# Pokédex
+# Top Movies
 
 ## Você pode ver o projeto em funcionamento [AQUI](https://top-movies-turinos.vercel.app/)
 
