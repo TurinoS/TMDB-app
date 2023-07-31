@@ -1,34 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pokédex
 
-## Getting Started
+## Você pode ver o projeto em funcionamento [AQUI](https://top-movies-turinos.vercel.app/)
 
-First, run the development server:
+## :dart: Proposta:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pensei no projeto com o intúito de aprender um pouco mais sobre o Next.js e para fazer o botão de troca entre dark e light mode, algo que eu já havia feito, mas usando da tão famosa "gambiarra". Dessa vez a troca de temas ficou mais bem feita e consegui aprofundar alguns conhecimentos básicos do Next 13 que ainda me traziam um pouco de confusão, como o sistema de rotas dinâmicas por exemplo.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trata-se de uma página que se utiliza da TMDB API para fornecer ao usuário uma lista para consultar os 20 filmes mais bem avaliados do TMDB.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## 🛠 Tecnologias utilizadas:
+
++ Next.js
++ TypeScript
++ Styled components
++ Context API
+
+## ☑️ Para rodar você precisará:
+
+ + Editor de código de sua preferência (recomendado VS code)
+ + Git
+ + Gerenciador de pacotes Yarn ou NPM
+
+## 📝 Procedimentos de instalação
+
+Clone este repositório usando o comando:
+
+```
+https://github.com/TurinoS/TMDB-app.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Na pasta do projeto instale as dependências com uso do npm ou yarn
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+ou
 
-## Learn More
+yarn install
+```
+Inicie o projeto com
 
-To learn more about Next.js, take a look at the following resources:
+```
+npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ou
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+yarn dev
+```
 
-## Deploy on Vercel
+ou usar o link para o projeto [https://top-movies-turinos.vercel.app/](https://top-movies-turinos.vercel.app/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 😎 Minhas redes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
++ Linkedin - [paulo-turino](https://www.linkedin.com/in/paulo-turino/)
++ Instagram - [@paulo_turino](https://www.instagram.com/paulo_turino/)
++ GitHub - [TurinoS](https://github.com/TurinoS)
